@@ -15,27 +15,33 @@ const _getResponse = async (getDoc, variables = {}) => {
 
 // @-----------------------------------------@
 
-export const getTodoList = () => async (dispatch) => {
+export const getTodoList = (loginUserId) => async (dispatch) => {
+  const variables = { id: loginUserId };
   const getDoc = `
-      query MyQuery {
-        todos(order_by: {created_at: asc}) {
+      query MyQuery($id: uuid = "") {
+        users_by_pk(id: $id) {
           id
           name
-          status
-          userId
-          created_at
-          updated_at
+          password
+          todos(order_by: {created_at: asc}) {
+            id
+            name
+            status
+            created_at
+            updated_at
+            userId
+          }
         }
       }
     `;
 
-  const response = await _getResponse(getDoc);
+  const response = await _getResponse(getDoc, variables);
   const { errors, data } = response;
 
   if (errors) {
     console.log(errors);
   } else {
-    dispatch({ type: "UPDATE_TODOLIST", payload: data.todos });
+    dispatch({ type: "UPDATE_TODOLIST", payload: data.users_by_pk.todos });
   }
 };
 

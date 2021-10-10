@@ -1,16 +1,22 @@
 import { useState, useEffect, useCallback } from "react";
-import "../css/TodoList.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getTodoList,
   changeStatusTodo,
   addTask,
   deleteTask,
-} from "../actions/fetchAPI.js";
+} from "../actions/todoList.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import { useHistory } from "react-router-dom";
 
 import Item from "./Item.js";
 
 function TodoList() {
+  const history = useHistory();
+  let loginUser = localStorage.getItem("token");
+  loginUser = JSON.parse(loginUser);
+
   const todoList = useSelector((state) => state.todoList);
 
   const dispatch = useDispatch();
@@ -18,8 +24,8 @@ function TodoList() {
   const [newTask, setNewTask] = useState("");
 
   const initFetch = useCallback(() => {
-    dispatch(getTodoList());
-  }, [dispatch]);
+    dispatch(getTodoList(loginUser.id));
+  }, [dispatch, loginUser.id]);
 
   useEffect(() => {
     initFetch();
@@ -32,7 +38,7 @@ function TodoList() {
 
   const handleAddTask = () => {
     setNewTask("");
-    dispatch(addTask(newTask, "0c5d5099-f7b5-47ed-b930-4a8d054c2d79"));
+    dispatch(addTask(newTask, loginUser.id));
   };
 
   const handleDeleteTask = (e, id) => {
@@ -46,9 +52,23 @@ function TodoList() {
     }
   };
 
+  const _logout = () => {
+    localStorage.removeItem("token");
+    history.push("/login");
+  };
+
   return (
-    <div>
-      <div className="container">
+    <div className="todoList">
+      <div className="btn-logout pointer" onClick={() => _logout()}>
+        <div>Log out</div>
+        <FontAwesomeIcon
+          className="logout-icon"
+          icon={faSignOutAlt}
+          color="red"
+          onClick={(e) => {}}
+        />
+      </div>
+      <div className="card">
         <div className="title">TO DO</div>
         {todoList.map((e) => (
           <Item

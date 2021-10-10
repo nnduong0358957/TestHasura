@@ -1,5 +1,6 @@
 .App {
-  position: relative;
+  position: fixed;
+  overflow: scroll;
   top: 0;
   bottom: 0;
   left: 0;
@@ -8,4 +9,153 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.card {
+  background-color: white;
+  padding: 20px 30px 30px 30px;
+  min-width: 300px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  margin: 30px 0px;
+  border-radius: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field {
+  width: 100%;
+  margin: 4px;
+  box-sizing: border-box;
+  padding-right: 50px !important;
+  font-size: 20px;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.Icon-inside {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.Icon-inside .input-icon {
+  position: absolute;
+  right: 6px;
+  padding: 10px 10px;
+  font-size: 20px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.label-input {
+  font-size: 20px;
+}
+
+.mt {
+  margin-top: 12px;
+}
+
+.btn-login {
+  margin: 24px auto;
+  padding: 6px 48px;
+  font-size: 20px;
+  border-radius: 8px;
+  max-width: 300px;
+  background-color: rgb(91, 91, 255);
+  color: white;
+  border: 0;
+}
+
+.switch-login-register {
+  text-align: center;
+  color: blue;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.btn-logout {
+  position: fixed;
+  top: 20px;
+  right: 60px;
+  display: flex;
+  background-color: red;
+  padding: 4px 24px;
+  font-size: 20px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.logout-icon {
+  color: white;
+  margin-left: 12px;
+  font-size: 30px;
+}
+
+.todoList {
+  display: flex;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 42px;
+}
+
+hr.horizontal_divider {
+  margin: 20px 0px;
+}
+
+.addInput {
+  font-size: 20px;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+.addBtn {
+  font-size: 20px;
+  background-color: rgb(24, 119, 242);
+  color: white;
+  padding: 8px 24px;
+  border-radius: 12px;
+  font-weight: bold;
+  margin-left: 16px;
+}
+
+.item {
+  background-color: beige;
+  border-radius: 6px;
+  padding: 8px;
+  margin-top: 12px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemContent {
+  font-size: 20px;
+  max-width: 300px;
+  overflow-wrap: break-word;
+}
+
+.deleteBtn {
+  padding-left: 20px;
+  font-size: 30px;
+}
+
+.deleteBtn:hover {
+  color: rgb(207, 114, 114);
+}
+
+.done {
+  text-decoration: line-through;
+  opacity: 0.6;
 }
