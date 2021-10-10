@@ -14,8 +14,7 @@ import Item from "./Item.js";
 
 function TodoList() {
   const history = useHistory();
-  let loginUser = localStorage.getItem("token");
-  loginUser = JSON.parse(loginUser);
+  const loginUser = JSON.parse(localStorage.getItem("token"));
 
   const todoList = useSelector((state) => state.todoList);
 
@@ -24,8 +23,9 @@ function TodoList() {
   const [newTask, setNewTask] = useState("");
 
   const initFetch = useCallback(() => {
-    dispatch(getTodoList(loginUser.id));
-  }, [dispatch, loginUser.id]);
+    if (loginUser) dispatch(getTodoList(loginUser.id));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch]);
 
   useEffect(() => {
     initFetch();
