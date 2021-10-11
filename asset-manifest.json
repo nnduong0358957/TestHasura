@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/TestHasura/static/css/main.7337d5e7.chunk.css",
-    "main.js": "/TestHasura/static/js/main.62fec8f7.chunk.js",
-    "main.js.map": "/TestHasura/static/js/main.62fec8f7.chunk.js.map",
+    "main.js": "/TestHasura/static/js/main.6d330dd8.chunk.js",
+    "main.js.map": "/TestHasura/static/js/main.6d330dd8.chunk.js.map",
     "runtime-main.js": "/TestHasura/static/js/runtime-main.ff8ccaba.js",
     "runtime-main.js.map": "/TestHasura/static/js/runtime-main.ff8ccaba.js.map",
     "static/js/2.59688ed6.chunk.js": "/TestHasura/static/js/2.59688ed6.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.ff8ccaba.js",
     "static/js/2.59688ed6.chunk.js",
     "static/css/main.7337d5e7.chunk.css",
-    "static/js/main.62fec8f7.chunk.js"
+    "static/js/main.6d330dd8.chunk.js"
   ]
 }
