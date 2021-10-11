@@ -44,11 +44,11 @@ function App() {
         }
 
         if (!loginUser && !checkIsPublicPage) {
-          history.push("/login");
+          history.push("/TestHasura/login");
         }
       } else {
         if (loginUser) history.push("/TestHasura");
-        else history.push("/login");
+        else history.push("/TestHasura/login");
       }
     };
 
