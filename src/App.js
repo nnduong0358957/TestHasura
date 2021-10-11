@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
     const checkLogin = async () => {
-      const publicPage = ["/login", "/register"];
+      const publicPage = ["/TestHasura/login", "/TestHasura/register"];
       const loginUser = await localStorage.getItem("token");
 
       const checkIsValidPage = routes.some(
