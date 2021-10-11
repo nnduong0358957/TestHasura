@@ -69,7 +69,7 @@ function Register() {
           Register
         </button>
 
-        <Link className="switch-login-register" to="/login">
+        <Link className="switch-login-register" to="/TestHasura/login">
           Back
         </Link>
       </form>

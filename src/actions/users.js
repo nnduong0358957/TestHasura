@@ -1,4 +1,4 @@
-const api = "http://localhost:4000/v1/graphql";
+const api = "https://hasura-amhr.onrender.com/v1/graphql";
 
 const _getResponse = async (getDoc, variables = {}) => {
   let response = await fetch(api, {

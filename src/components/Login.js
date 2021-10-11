@@ -59,7 +59,7 @@ function Login() {
           Login
         </button>
 
-        <Link className="switch-login-register" to="/register">
+        <Link className="switch-login-register" to="/TestHasura/register">
           Register
         </Link>
       </form>

@@ -54,7 +54,7 @@ function TodoList() {
 
   const _logout = () => {
     localStorage.removeItem("token");
-    history.push("/login");
+    history.push("/TestHasura/login");
   };
 
   return (

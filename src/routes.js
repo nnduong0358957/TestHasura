@@ -10,12 +10,12 @@ const routes = [
     main: () => <TodoList />,
   },
   {
-    path: "/login",
+    path: "/TestHasura/login",
     exact: true,
     main: () => <Login />,
   },
   {
-    path: "/register",
+    path: "/TestHasura/register",
     exact: true,
     main: () => <Register />,
   },
